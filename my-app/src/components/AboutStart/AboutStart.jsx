@@ -8,7 +8,7 @@ import "../AboutStart/Aboutstart.css"
 const AboutStart = () => {
     return (
         <div className='contenedor-about'>
-            <div classNameName="container-fluid py-5">
+            <div className="container-fluid py-5">
                 <div className="container pt-5">
                     <div className="row">
                         <div className="col-lg-6" style={{ minHeight: '500px' }}>

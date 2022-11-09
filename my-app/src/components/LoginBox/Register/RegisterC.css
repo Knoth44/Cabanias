@@ -37,10 +37,13 @@ input {
 }
 
 .form-inputs3 {
+
     text-align: center;
 }
 
 .form-inputs3 input {
+    color: white;
+    transition: all 0.6s;
     margin-top: 20px;
     background-color: #7AB730;
     width: 50%;
@@ -52,6 +55,7 @@ input {
 .form-inputs3 input:hover {
     background-color: #7ab7309d;
     border-color: #7AB730;
+    border: 2px solid transparent
 }
 
 h4 {

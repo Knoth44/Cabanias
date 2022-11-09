@@ -21,8 +21,10 @@ connection.once("open", () => {
 const cabaniasRouter = require("./routes/cabanias")
 const usersRouter = require("./routes/users")
 
+
 app.use("/cabanias", cabaniasRouter)
 app.use("/users", usersRouter)
+
 
 app.listen(port, () => {
     console.log(`Server esta corriendo en el puerto: ${port}`)
