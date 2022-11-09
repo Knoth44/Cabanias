@@ -3,9 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import RegisterC from './Register/RegisterC';
 import "./LoginBox.css";
+import Database from '../../Hooks/Database';
 
 const LoginBox = () => {
 
+    const { DB_MongoUserFind } = Database()
     const [Register, setRegister] = useState(false)
     const [findUser, setFindUser] = useState({
         user: {
@@ -33,9 +35,9 @@ const LoginBox = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-
+       
         if (!agree([email, password])) {
-            console.log(findUser);
+            DB_MongoUserFind(findUser.user);
             return;
         }
         alert("error")
@@ -54,7 +56,7 @@ const LoginBox = () => {
                 <div className="form-section1">
                     <div className="form-inputs1">
                         <label htmlFor="password">Contraseña </label>
-                        <input type="text" name="password" placeholder="Contraseña" onChange={(e) => handleChange(e)} />
+                        <input type="password" name="password" placeholder="Contraseña" onChange={(e) => handleChange(e)} />
                     </div>
                 </div>
                 <div className="form-inputs3">
