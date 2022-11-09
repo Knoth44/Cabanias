@@ -20,7 +20,7 @@ const CarouselC = () => {
                         <h4>EXCURSIONES Y VIAJES</h4>
                         <h1>Descubramos el departamento juntos</h1>
                         <div className='d-flex justify-content-center cursor-pointer'>
-                            <Link className='buttonreserva'> Reservar Ahora</Link>
+                            <Link className='buttonreserva' to={'/create'}> Reservar Ahora</Link>
                         </div>
 
                     </Carousel.Caption>
@@ -36,7 +36,7 @@ const CarouselC = () => {
                         <h4>EXCURSIONES Y VIAJES</h4>
                         <h1>Descubre lugares increíbles con nosotros</h1>
                         <div className='d-flex justify-content-center cursor-pointer h-100 btn-reserva'>
-                            <Link className='buttonreserva'> Reservar Ahora</Link>
+                            <Link className='buttonreserva' to={'/create'}> Reservar Ahora</Link>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>

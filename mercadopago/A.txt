@@ -1,0 +1,12 @@
+http://localhost:3003/success?
+collection_id=51287267848&
+collection_status=approved&
+payment_id=51287267848&
+status=approved&
+external_reference=null&
+payment_type=account_money&
+merchant_order_id=6419695390&
+preference_id=1234118199-70ea3187-514e-4b6b-8777-fb4e97053f33&
+site_id=MLA&
+processing_mode=aggregator&
+merchant_account_id=null

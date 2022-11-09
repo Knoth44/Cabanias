@@ -1,0 +1,19 @@
+.estilo{
+    width: 50%;
+    height: 600px;
+}
+
+.select{
+    padding-top: 200px;
+}
+
+.button{
+    margin-top: 15px;
+    margin-right: 10px;
+    width: 150px;
+    height: 60px;
+}
+
+.contenedorBtn{
+    text-align: center;
+}

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { CallDataBaseProvider } from '../Context/Context';
 
 const Database = () => {
-    const { setUser, User } = CallDataBaseProvider();
+    const { setUser } = CallDataBaseProvider();
 
     const DB_MongoCabanias = () => {
         axios.get("http://localhost:5000/cabanias")
@@ -34,18 +34,20 @@ const Database = () => {
         axios.get("http://localhost:5000/users")
             .then(i => {
                 const aux = i.data;
-                setUser(buscar(aux, email, password))
-                console.log(User)
+
+                const aux2 = buscar(aux, email, password)
+                setUser(aux2 === false ? {} : aux2)
+
             })
             .catch(err => console.log(err))
     }
     const buscar = (a, b, c) => {
         for (const persona of a) {
             if (persona.username.email === b && persona.username.password === c) {
-                return persona
+                return persona;
             }
-
         }
+        return false
     }
     return {
         DB_MongoCabanias,
