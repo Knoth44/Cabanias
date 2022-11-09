@@ -1,0 +1,31 @@
+.contact-nos {
+    display: flex;
+    width: 75%;
+    height: 60px;
+    align-items: center;
+    color: #656565;
+    font-weight: 300;
+    justify-content: space-between;
+
+}
+
+.contact-nos__mail {
+    font-weight: bolder;
+    font-size: 1em;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-nos__redes {
+    color: #7AB730;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.animation:hover{
+    color: #527a20;
+}

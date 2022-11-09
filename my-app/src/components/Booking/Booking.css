@@ -1,0 +1,54 @@
+.booking {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.booking__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    bottom: 50%;
+    width: 80%;
+    height: 100px;
+    background-color: aliceblue;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.booking__box_inputs {
+    width: 195px;
+    height: 47px;
+    align-items: center;
+    border-radius: 0px;
+}
+
+.booking__box_inputs select,
+input,
+button {
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.booking__box_inputs button {
+    width: 80%;
+    background-color: rgb(122, 183, 48);
+    border-radius: 0%;
+    border-color: transparent;
+}
+
+.booking__box_inputs button:hover {
+    background-color: rgb(122, 183, 48);
+    border-radius: 0%;
+    border-color: transparent;
+    color: #fff;
+    background-color: #669928;
+    border-color: #5f8f25;
+
+}

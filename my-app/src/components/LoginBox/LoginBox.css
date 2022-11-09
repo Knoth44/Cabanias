@@ -1,0 +1,28 @@
+.form-login {
+    margin: 1rem;
+    padding: 35px;
+    border-radius: 20px;
+    height: 300px;
+    font-family: "Poppins", sans-serif;
+}
+
+.btn-form {
+    background-color: #7AB730;
+    width: 50%;
+    border-radius: 0px;
+    border-color: transparent;
+    transition: all 0.5s;
+}
+
+.btn-form:hover {
+    background-color: #7ab7309d;
+    border-color: #7AB730;
+}
+
+.title h4{
+    color: #7AB730;
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 2rem;
+    user-select: none; 
+}

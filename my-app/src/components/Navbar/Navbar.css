@@ -1,0 +1,28 @@
+.nav-style__hover:hover {
+    color: #7AB730;
+}
+
+.navbar-i {
+    width: 80%;
+    height: 80px;
+    padding-left: 10px;
+    padding:30px;
+    background-color:#FFFFFF;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+.navbar-nav,
+.mr-auto {
+    flex: 1;
+    margin: auto !important;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-center {
+    position: relative;
+    bottom: 50%;
+    top: 40px;
+    overflow: hidden;
+    z-index: 1;
+}

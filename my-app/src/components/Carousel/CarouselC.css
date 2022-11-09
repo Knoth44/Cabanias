@@ -1,0 +1,45 @@
+.carousel-caption {
+    left: 15%;
+    bottom: 35%;
+
+}
+
+.carousel-caption h4 {
+    font-weight: 600;
+}
+
+.carousel-caption h1 {
+    font-size: 4.5rem;
+    font-weight: 700
+}
+
+.carousel img{ 
+    filter: brightness(0.5)
+}
+.carousel-indicators {
+    display: none;
+}
+.btn-reserva {
+    margin-top: 1rem;
+}
+.buttonreserva {
+
+    color: white;
+    width: 213px;
+    height: 58px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: #5f8f25;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.buttonreserva:hover {
+    color: #fff;
+    background-color: #669928;
+    border-color: #5f8f25;
+}

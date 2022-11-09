@@ -1,0 +1,9 @@
+.main-content {
+    height: calc(100vh - 100% - 100%);
+}
+
+.main-login {
+    height: 500px;
+    background-image: url(../assets/img/im1.jpg);
+    background-size: cover;
+}
