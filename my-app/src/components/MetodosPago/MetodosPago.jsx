@@ -48,8 +48,8 @@ const MetodosPagoC = () => {
           <option>Transferencia</option>
         </Form.Select>
         <div className='contenedorBtn'>
-          <Button variant="primary" className='button'> <Link to={`/${Select}`}>  Continuar  </Link></Button>{' '}
-          <Button variant="secondary" className='button'> <Link to={'/'}> Cancelar </Link></Button>{' '}
+          <Button style={{width:'100px',height:'auto', backgroundColor:'grey', borderColor:'transparent'}} className='button'> <Link style={{color:'white',textDecoration:'none'}} to={`/${Select}`}>  Continuar  </Link></Button>{' '}
+          <Button style={{width:'100px',height:'auto', backgroundColor:'grey', borderColor:'transparent'}} className='button'> <Link style={{color:'white',textDecoration:'none'}} to={'/'}> Cancelar </Link></Button>{' '}
         </div>
       </Form>
     </Container>

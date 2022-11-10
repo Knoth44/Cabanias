@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import "./RegisterC.css";
 import Database from '../../../Hooks/Database';
+import { CallDataBaseProvider } from '../../../Context/Context';
 
 const RegisterC = () => {
 
-    // const { User, setUser, Cabanias } = CallDataBaseProvider();
+    const { setError } = CallDataBaseProvider();
     const { DB_MongoUserAdd } = Database()
     const [form, setForm] = useState({
         user: {
@@ -16,7 +17,7 @@ const RegisterC = () => {
         }
     })
 
-    const { user: { nombre, apellido, email, password, phone }} = form
+    const { user: { nombre, apellido, email, password, phone } } = form
 
     const handleChange = (e) => {
 
@@ -37,11 +38,15 @@ const RegisterC = () => {
         e.preventDefault();
 
         if (!agree([email, nombre, apellido, phone, password])) {
-            
+
             DB_MongoUserAdd(form)
+
             return;
         }
-        alert("error")
+        setError(true)
+        setTimeout(() => {
+            setError(false)
+        }, 3000);
 
     };
 
@@ -73,7 +78,7 @@ const RegisterC = () => {
                         <input type="text" name="password" placeholder="Email" onChange={(e) => handleChange(e)} />
                     </div>
                     <div className="form-inputs3">
-                        <input type="submit" id="input-form" onClick={(e) => onSubmit(e)} value="Enviar formulario" />
+                        <input type="submit" id="input-form" onClick={(e) => onSubmit(e)} value="Registrarse" />
                     </div>
                 </form>
             </div>

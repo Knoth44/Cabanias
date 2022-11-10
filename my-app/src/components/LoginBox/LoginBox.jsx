@@ -4,9 +4,10 @@ import Form from 'react-bootstrap/Form';
 import RegisterC from './Register/RegisterC';
 import "./LoginBox.css";
 import Database from '../../Hooks/Database';
+import { CallDataBaseProvider } from '../../Context/Context';
 
 const LoginBox = () => {
-
+    const { setError } = CallDataBaseProvider();
     const { DB_MongoUserFind } = Database()
     const [Register, setRegister] = useState(false)
     const [findUser, setFindUser] = useState({
@@ -35,13 +36,15 @@ const LoginBox = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-       
+
         if (!agree([email, password])) {
             DB_MongoUserFind(findUser.user);
             return;
         }
-        alert("error")
-
+        setError(true)
+        setTimeout(() => {
+            setError(false)
+        }, 3000);
     };
     return (
         <div className='d-flex w-100 justify-content-center'>
@@ -49,12 +52,12 @@ const LoginBox = () => {
                 <div className='title'>
                     <h4>Iniciar sesion</h4>
                 </div>
-                <div className="form-inputs1">
+                <div className="form-inputs1" style={{ width: '100%', marginBottom: '45px' }}>
                     <label htmlFor="email">Email </label>
                     <input type="text" name="email" placeholder="Email" onChange={(e) => handleChange(e)} />
                 </div>
-                <div className="form-section1">
-                    <div className="form-inputs1">
+                <div className="form-section1" >
+                    <div className="form-inputs1" style={{ width: '100%', marginBottom: '45px' }}>
                         <label htmlFor="password">Contraseña </label>
                         <input type="password" name="password" placeholder="Contraseña" onChange={(e) => handleChange(e)} />
                     </div>
@@ -68,8 +71,8 @@ const LoginBox = () => {
                     }}>
                         Ingresar
                     </Button>
-                </div>
-                {/* <Form.Group className="mb-3" controlId="formBasicEmail">
+
+                    {/* <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label name="usuario">Usuario</Form.Label>
                     <Form.Control type="name" placeholder="Usuario por mail" onChange={(e) => handleChange(e)} />
                 </Form.Group>
@@ -81,12 +84,13 @@ const LoginBox = () => {
                     <Form.Check type="checkbox" label="Recordar contraseña" />
                 </Form.Group> */}
 
-                <Button className='btn-form' style={{
-                    paddingRight: '10px',
-                    marginLeft: '10px',
-                    width: '30%',
-                    height: 'max-content'
-                }} onClick={() => setRegister(!Register)}> Desea registrarse ?</Button>
+                    <Button className='btn-form' style={{
+                        paddingRight: '10px',
+                        marginLeft: '10px',
+                        width: '30%',
+                        height: 'max-content'
+                    }} onClick={() => setRegister(!Register)}> Desea registrarse ?</Button>
+                </div>
             </Form>
             {Register && <RegisterC />}
 
