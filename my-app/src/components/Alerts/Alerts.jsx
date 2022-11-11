@@ -4,11 +4,11 @@ import { CallDataBaseProvider } from '../../Context/Context';
 import "./Alerts.css"
 
 function AlertC() {
-    const { Alerta, User } = CallDataBaseProvider();
+    const { alerta, User } = CallDataBaseProvider();
 
     return (
         <>
-            {Alerta &&
+            {alerta &&
                 <Alert key={'light'} variant={'light'} style={{ position: 'absolute', top: '10%', right: '0%', borderRadius: '10px', borderColor: '#6e6e6e', width: 'auto', height: 'auto', backgroundColor: '#e6e6e6', display: 'flex', flexDirection: 'column' }}>
                     Hola {User.username.nombre} !!
                     <div className="check-icon">

@@ -7,7 +7,7 @@ import Database from '../../Hooks/Database';
 import { CallDataBaseProvider } from '../../Context/Context';
 
 const LoginBox = () => {
-    const { setError } = CallDataBaseProvider();
+    const { setError, setMsg } = CallDataBaseProvider();
     const { DB_MongoUserFind } = Database()
     const [Register, setRegister] = useState(false)
     const [findUser, setFindUser] = useState({
@@ -42,9 +42,8 @@ const LoginBox = () => {
             return;
         }
         setError(true)
-        setTimeout(() => {
-            setError(false)
-        }, 3000);
+        setMsg("Llenar los campos!")
+
     };
     return (
         <div className='d-flex w-100 justify-content-center'>

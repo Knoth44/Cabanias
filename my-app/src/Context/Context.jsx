@@ -7,15 +7,15 @@ export const CallDataBaseProvider = () => useContext(CallDataBase);
 const CallDataBaseState = ({ children }) => {
 
     const [User, setUser] = useState([])
-    const [Alerta, setAlerta] = useState(false)
-    const [error, setError] = useState(false)
-    const [msg, setMsg] = useState(false)
+    const [alerta, setAlerta] = useState(false);
+    const [msg, setMsg] = useState()
+    const [error , setError] = useState(true)
     
     return (
         <CallDataBase.Provider value={{
             User,
             setUser,
-            Alerta,
+            alerta,
             setAlerta,
             error,
             setError,

@@ -5,7 +5,7 @@ import { CallDataBaseProvider } from '../../../Context/Context';
 
 const RegisterC = () => {
 
-    const { setError } = CallDataBaseProvider();
+    const { setError, setMsg } = CallDataBaseProvider();
     const { DB_MongoUserAdd } = Database()
     const [form, setForm] = useState({
         user: {
@@ -44,9 +44,7 @@ const RegisterC = () => {
             return;
         }
         setError(true)
-        setTimeout(() => {
-            setError(false)
-        }, 3000);
+        setMsg("Llenar los campos!")
 
     };
 
@@ -77,7 +75,7 @@ const RegisterC = () => {
                         <label htmlFor="password">Contraseña </label>
                         <input type="text" name="password" placeholder="Contraseña" onChange={(e) => handleChange(e)} />
                     </div>
-                    <div className="form-inputs3" style={{textAlign:'center'}} >
+                    <div className="form-inputs3" style={{ textAlign: 'center' }} >
                         <input type="submit" id="input-form" onClick={(e) => onSubmit(e)} value="Registrarse" />
                     </div>
                 </form>

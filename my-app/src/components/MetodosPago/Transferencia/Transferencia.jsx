@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import "./Transferencia.css";
+import { CallDataBaseProvider } from '../../../Context/Context';
 
 
 const TransferenciaC = () => {
-
+    const [File, setFile] = useState("")
+    const { setError, setMsg } = CallDataBaseProvider();
+    const confirmFile = (e) => {
+        if (e === "") {
+            setError(true)
+            setMsg("Seleccionar archivo")
+        } 
+    }
     return (
         <Container fluid className='estilo'>
             <Form>
@@ -35,11 +43,11 @@ const TransferenciaC = () => {
                     </p>
                     <Form.Group controlId="formFile" className="mb-3">
                         <Form.Label>Adjuntar comprobante</Form.Label>
-                        <Form.Control type="file" />
+                        <Form.Control type="file" onChange={(e) => setFile(e.target.value)} />
                     </Form.Group>
                 </div>
                 <div className='contenedorBtn'>
-                    <Button variant="primary" className='button'> Continuar </Button>{' '}
+                    <Button variant="primary" className='button' onClick={() => confirmFile(File)}> Continuar </Button>{' '}
                     <Button variant="secondary" className='button'> Cancelar</Button>{' '}
                 </div>
             </Form>

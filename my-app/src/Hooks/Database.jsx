@@ -38,20 +38,12 @@ const Database = () => {
                 const aux2 = buscar(aux, email, password)
                 setUser(aux2 === false ? [] : aux2)
                 if (aux2 === false) {
+
+                    setMsg("Hubo algun error \n Intentar nuevamente!")
                     setError(true)
-                    setMsg(true)
-                    setTimeout(() => {
-                        setMsg(false)
-                    }, 1000);
                 } else {
-                    setAlerta(true)
-                    setMsg(false)
-                    setTimeout(() => {
-                        setAlerta(false)
-                    }, 1000);
+                    alertsLogin();
                 }
-
-
             })
             .catch(err => console.log(err))
     }
@@ -64,6 +56,12 @@ const Database = () => {
         return false
     }
 
+    const alertsLogin = () => {
+        setAlerta(true)
+        setTimeout(() => {
+            setAlerta(false)
+        }, 1000);
+    }
 
     return {
         DB_MongoCabanias,

@@ -3,19 +3,20 @@ import React, { useEffect } from 'react'
 import { CallDataBaseProvider } from '../../Context/Context';
 
 const Toast = () => {
-  const { error, msg } = CallDataBaseProvider();
+  const { error, msg, setError, setAlerta, setMsg,  } = CallDataBaseProvider();
 
   useEffect(() => {
 
-    if (msg) {
-      toast.error("Hubo algun error \n Intentar nuevamente!")
-
-    } else {
-      toast.error('Llenar campos')
+    if (error) {
+      toast.error(msg)
+      setTimeout(() => {
+        setAlerta(false);
+        setError()
+        setMsg()
+      }, 3000);
     }
 
-
-  }, [error, msg])
+  }, [ msg, setAlerta, setError, setMsg, error])
 
   return (
     <>
@@ -30,5 +31,4 @@ const Toast = () => {
     </>
   );
 }
-
 export default Toast

@@ -16,7 +16,7 @@ app.get('/generar', (req, res) => {
             {
                 id: 123,
                 title: 'Cabana 1 - 1 Persona',
-                unit_price: 4000,
+                unit_price: 100,
                 currency_id: "ARS",
                 quantity: 1,
             }
