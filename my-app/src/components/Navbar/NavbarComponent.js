@@ -27,10 +27,10 @@ const NavbarComponent = () => {
                                 {
                                     User.username === undefined ?
                                         <div><Link to={"/create"} className="nav-link" style={{ fontSize: "1em", fontWeight: "600", borderRadius: '20px', backgroundColor: "#7AB730", width: '150px', textAlign: 'center' }}>Iniciar sesion</Link></div>
-                                        : <div style={{height:'auto', paddingTop:'10px'}}> <h6 style={{letterSpacing:'0px'}}> Hola ! {User.username.nombre}</h6></div>
+                                        : <div style={{ height: 'auto', paddingTop: '10px' }}> <h6 style={{ letterSpacing: '0px' ,fontWeight:'600'}}> Hola {User.username.nombre}!</h6></div>
                                 }
                             </Nav>
-                            {User.username && <Button onClick={() => setUser({})} style={{ width: '25%', backgroundColor: '#7AB730', borderColor: 'transparent', heigth: 'auto', marginLeft: '10px' }} > <Link to={"/"} style={{ textDecoration: 'none', color: 'black' }}> Desloguear </Link></Button>}
+                            {User.username && <Button onClick={() => setUser({})} style={{ width: '25%', backgroundColor: '#7AB730', borderColor: 'transparent', heigth: 'auto', marginLeft: '10px' }} > <Link to={"/"} style={{ textDecoration: 'none', color: 'black' }}> Cerrar sesion </Link></Button>}
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>

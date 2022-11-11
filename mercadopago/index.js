@@ -3,7 +3,8 @@ const http = require('http');
 const cors = require('cors');
 const app = express();
 app.set('port', 3003);
-//app.use(cors({   origin: '*',}));
+app.use(cors({ origin: '*', }));
+
 app.get('/generar', (req, res) => {
 
     let preference = {
@@ -27,7 +28,8 @@ app.get('/generar', (req, res) => {
         .create(preference)
         .then(function (response) {
             console.log(response.body.init_point);
-            res.send(`<a href="${response.body.init_point}">IR A PAGAR</a>`);
+            // document.body.style.backgroundColor = 'green';
+            res.send(`<a href="${response.body.init_point}" style='textDecoration:'none'>IR A PAGAR</a>`);
         })
         .catch(function (error) {
             console.log(error);
@@ -42,6 +44,7 @@ app.use('/notificar', (req, res) => {
 });
 const mercadopago = require('mercadopago');
 const { cursorTo } = require('readline');
+const { url } = require('inspector');
 mercadopago.configure({
     access_token: "APP_USR-6100019545886072-110721-f6a936635f3a7682736319740da47259-1234118199",
 })

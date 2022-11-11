@@ -75,9 +75,9 @@ const RegisterC = () => {
                     </div>
                     <div className="form-inputs1">
                         <label htmlFor="password">Contraseña </label>
-                        <input type="text" name="password" placeholder="Email" onChange={(e) => handleChange(e)} />
+                        <input type="text" name="password" placeholder="Contraseña" onChange={(e) => handleChange(e)} />
                     </div>
-                    <div className="form-inputs3">
+                    <div className="form-inputs3" style={{textAlign:'center'}} >
                         <input type="submit" id="input-form" onClick={(e) => onSubmit(e)} value="Registrarse" />
                     </div>
                 </form>

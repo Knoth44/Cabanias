@@ -4,55 +4,29 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import "./MetodosPago.css";
 import { Link } from 'react-router-dom';
-// import mercadopago from 'mercadopago';
+import DatabaseMerc from '../../Hooks/Mercadopago';
 
 const MetodosPagoC = () => {
+
   const [Select, setSelect] = useState("metodospago")
-
-  // const functMercado = () => {
-  //   fetch('http://localhost:3000/generar', (req, res) => {
-
-  //     let preference = {
-  //       back_urls: {
-  //         success: 'http://localhost:3003/success'
-  //       },
-  //       items: [
-
-  //         {
-  //           id: 123,
-  //           title: 'Cabana 1 - 1 Persona',
-  //           unit_price: 4000,
-  //           currency_id: "ARS",
-  //           quantity: 1,
-  //         }
-  //       ],
-  //     };
-
-  //     mercadopago.preferences
-  //       .create(preference)
-  //       .then(function (response) {
-  //         console.log(response.body.init_point);
-  //         res.send(`<a href="${response.body.init_point}">IR A PAGAR</a>`);
-  //       })
-  //       .catch(function (error) {
-  //         console.log(error);
-  //       });
-  //   });
-  // }
+  const { getTicketPrice, Url } = DatabaseMerc()
 
   return (
-    <Container fluid className='estilo'>
-      <Form className='select'>
-        <Form.Select size="lg" onChange={(e) => setSelect(e.target.value.toLowerCase())}>
-          <option>Mercadopago</option>
-          <option>Transferencia</option>
-        </Form.Select>
-        <div className='contenedorBtn'>
-          <Button style={{width:'100px',height:'auto', backgroundColor:'grey', borderColor:'transparent'}} className='button'> <Link style={{color:'white',textDecoration:'none'}} to={`/${Select}`}>  Continuar  </Link></Button>{' '}
-          <Button style={{width:'100px',height:'auto', backgroundColor:'grey', borderColor:'transparent'}} className='button'> <Link style={{color:'white',textDecoration:'none'}} to={'/'}> Cancelar </Link></Button>{' '}
-        </div>
-      </Form>
-    </Container>
+    <>
+      <Container fluid className='estilo'>
+        <Form className='select'>
+          <Form.Select size="lg" onChange={(e) => setSelect(e.target.value.toLowerCase())}>
+            <option>Mercadopago</option>
+            <option>Transferencia</option>
+          </Form.Select>
+          <div className='contenedorBtn'>
+            <Button onClick={() => getTicketPrice()} style={{ width: '100px', height: 'auto', backgroundColor: '#527a20', borderColor: 'transparent' }} className='button'> <Link style={{ color: 'white', textDecoration: 'none' }}>  Continuar  </Link></Button>{' '}   {Url.length >= 1 && <a href={`${Url}`} style={{ color: 'white', textDecoration: 'none' }} ><Button style={{ width: '100px', height: 'auto', backgroundColor: '#527a20', marginTop: '15px', marginRight: '10px', borderColor: 'transparent' }}> Ir </Button></a>}
+            <Button style={{ width: '100px', height: 'auto', backgroundColor: 'grey', borderColor: 'transparent' }} className='button'> <Link style={{ color: 'white', textDecoration: 'none' }} to={'/'}> Cancelar </Link></Button>{' '}
+          </div>
+        </Form>
+      </Container >
+
+    </>
   )
 }
 

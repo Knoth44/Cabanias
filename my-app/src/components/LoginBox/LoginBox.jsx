@@ -71,25 +71,12 @@ const LoginBox = () => {
                     }}>
                         Ingresar
                     </Button>
-
-                    {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label name="usuario">Usuario</Form.Label>
-                    <Form.Control type="name" placeholder="Usuario por mail" onChange={(e) => handleChange(e)} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label name="contrasenia">Contraseña</Form.Label>
-                    <Form.Control type="password" placeholder="Contraseña" onChange={(e) => handleChange(e)} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Recordar contraseña" />
-                </Form.Group> */}
-
                     <Button className='btn-form' style={{
                         paddingRight: '10px',
-                        marginLeft: '10px',
+                        marginLeft: '60px',
                         width: '30%',
                         height: 'max-content'
-                    }} onClick={() => setRegister(!Register)}> Desea registrarse ?</Button>
+                    }} onClick={() => setRegister(!Register)}> Crear cuenta nueva</Button>
                 </div>
             </Form>
             {Register && <RegisterC />}
