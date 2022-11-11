@@ -1,25 +1,21 @@
-
 import toast, { Toaster } from 'react-hot-toast';
-
 import React, { useEffect } from 'react'
 import { CallDataBaseProvider } from '../../Context/Context';
 
 const Toast = () => {
-  const { error, msg, setMsg } = CallDataBaseProvider();
+  const { error, msg } = CallDataBaseProvider();
 
   useEffect(() => {
 
-    if (msg.length >= 1) {
-      toast.error(msg)
-    }
-    if (!msg === "") {
+    if (msg) {
+      toast.error("Hubo algun error \n Intentar nuevamente!")
+
+    } else {
       toast.error('Llenar campos')
     }
-    setTimeout(() => {
-      setMsg("")
-    }, 3000);
 
-  }, [error, msg, setMsg])
+
+  }, [error, msg])
 
   return (
     <>

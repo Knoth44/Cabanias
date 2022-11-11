@@ -2,7 +2,7 @@ import axios from 'axios'
 import { CallDataBaseProvider } from '../Context/Context';
 
 const Database = () => {
-    const { setUser, User, setAlerta, setError, setMsg } = CallDataBaseProvider();
+    const { setUser, setAlerta, setError, setMsg } = CallDataBaseProvider();
 
     const DB_MongoCabanias = () => {
         axios.get("http://localhost:5000/cabanias")
@@ -39,9 +39,16 @@ const Database = () => {
                 setUser(aux2 === false ? [] : aux2)
                 if (aux2 === false) {
                     setError(true)
-                    setMsg("Hubo algun error \n Intentar nuevamente!")
+                    setMsg(true)
+                    setTimeout(() => {
+                        setMsg(false)
+                    }, 1000);
                 } else {
-                    alertsLogin(User);
+                    setAlerta(true)
+                    setMsg(false)
+                    setTimeout(() => {
+                        setAlerta(false)
+                    }, 1000);
                 }
 
 
@@ -57,14 +64,7 @@ const Database = () => {
         return false
     }
 
-    const alertsLogin = () => {
 
-        setAlerta(true)
-        setTimeout(() => {
-            setAlerta(false)
-        }, 1000);
-
-    }
     return {
         DB_MongoCabanias,
         DB_MongoUser,

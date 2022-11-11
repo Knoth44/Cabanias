@@ -9,7 +9,7 @@ const CallDataBaseState = ({ children }) => {
     const [User, setUser] = useState([])
     const [Alerta, setAlerta] = useState(false)
     const [error, setError] = useState(false)
-    const [msg, setMsg] = useState("")
+    const [msg, setMsg] = useState(false)
     
     return (
         <CallDataBase.Provider value={{
