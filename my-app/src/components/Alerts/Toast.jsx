@@ -5,13 +5,22 @@ import React, { useEffect } from 'react'
 import { CallDataBaseProvider } from '../../Context/Context';
 
 const Toast = () => {
-  const { error } = CallDataBaseProvider();
+  const { error, msg, setMsg } = CallDataBaseProvider();
 
   useEffect(() => {
 
-    toast.error('Llenar campos')
-  }, [error])
-  
+    if (msg.length >= 1) {
+      toast.error(msg)
+    }
+    if (!msg === "") {
+      toast.error('Llenar campos')
+    }
+    setTimeout(() => {
+      setMsg("")
+    }, 3000);
+
+  }, [error, msg, setMsg])
+
   return (
     <>
       {error && (

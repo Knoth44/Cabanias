@@ -20,7 +20,7 @@ const MetodosPagoC = () => {
             <option>Transferencia</option>
           </Form.Select>
           <div className='contenedorBtn'>
-            <Button onClick={() => getTicketPrice()} style={{ width: '100px', height: 'auto', backgroundColor: '#527a20', borderColor: 'transparent' }} className='button'> <Link style={{ color: 'white', textDecoration: 'none' }}>  Continuar  </Link></Button>{' '}   {Url.length >= 1 && <a href={`${Url}`} style={{ color: 'white', textDecoration: 'none' }} ><Button style={{ width: '100px', height: 'auto', backgroundColor: '#527a20', marginTop: '15px', marginRight: '10px', borderColor: 'transparent' }}> Ir </Button></a>}
+            <Button onClick={() => getTicketPrice()} style={{ width: '100px', height: 'auto', backgroundColor: '#527a20', borderColor: 'transparent' }} className='button'> <Link style={{ color: 'white', textDecoration: 'none' }} to={`/${Select}`}>  Continuar  </Link></Button>{' '}   {Url.length >= 1 && <a href={`${Url}`} style={{ color: 'white', textDecoration: 'none' }} ><Button style={{ width: '100px', height: 'auto', backgroundColor: '#527a20', marginTop: '15px', marginRight: '10px', borderColor: 'transparent' }}> Ir </Button></a>}
             <Button style={{ width: '100px', height: 'auto', backgroundColor: 'grey', borderColor: 'transparent' }} className='button'> <Link style={{ color: 'white', textDecoration: 'none' }} to={'/'}> Cancelar </Link></Button>{' '}
           </div>
         </Form>
